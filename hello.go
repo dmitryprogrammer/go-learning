@@ -7,8 +7,9 @@ import (
 
 func main() {
 	var s, sep string
-	var i int
-	for i = 1; i < len(os.Args); i++ {
+	var i, argsLen int
+	argsLen = len(os.Args)
+	for i = 1; i < argsLen; i++ {
 		s += sep + os.Args[i]
 		sep = " "
 	}
