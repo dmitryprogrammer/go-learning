@@ -6,5 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, my name is " + os.Args[1])
+	a3 := [20]int{1,2,3,4}
+	fmt.Println("Hello, my name is " + os.Args[1] + "\n")
+	fmt.Println(a3)
 }
