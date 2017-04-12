@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Print(len(os.Args))
+	fmt.Println("Hello, my name is " + os.Args[1])
 }
