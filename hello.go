@@ -10,4 +10,3 @@ func main() {
 	fmt.Println("Hello, my name is " + os.Args[1] + "\n")
 	fmt.Println(a3)
 }
-
