@@ -42,6 +42,7 @@ func shortIteration() {
 	fmt.Println(os.Args[1:])
 }
 
+// Command arguments output with filename, or without depend on argument flag
 func indexedIteration(isFileVisible bool) {
 	var arguemnts string
 	var sep = " "
