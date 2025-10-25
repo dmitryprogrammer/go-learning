@@ -2,13 +2,31 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
+	"strconv"
 )
 
 func main() {
-	a3 := [20]int{1, 2, 3, 4}
-	if len(os.Args) > 1 {
-		fmt.Printf(fmt.Sprintf("Hello, my name is %s \n", os.Args[1]))
+	if len(os.Args[:1]) == 0 {
+		return
 	}
-	fmt.Println(a3)
+
+	var userHeight float64
+	var userWidth float64
+	var errHeight error
+	var errWidth error
+
+	userHeight, errHeight = strconv.ParseFloat(os.Args[1], 64)
+	userWidth, errWidth = strconv.ParseFloat(os.Args[2], 64)
+
+	if errHeight != nil || errWidth != nil {
+		fmt.Print(errHeight, errWidth)
+		return
+	}
+
+	var IMT = userWidth / math.Pow(userHeight, 2)
+	var IMTFormatted = fmt.Sprintf("%.2f", IMT)
+
+	fmt.Print(IMTFormatted)
 }
