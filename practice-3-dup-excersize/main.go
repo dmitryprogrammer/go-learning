@@ -8,7 +8,7 @@ import (
 
 func main() {
 	counts := make(map[string]int)
-	files := os.Args[:1]
+	files := os.Args[1:]
 
 	if len(files) != 0 {
 		for _, arg := range files {
@@ -22,8 +22,18 @@ func main() {
 		}
 	}
 
-	for line, n := range counts {
-		fmt.Printf("%d\t%s\n", n, line)
+	var uniqueCounts []int
+	var line int = 0
+
+	for _, n := range counts {
+		if n != line {
+			line = n
+			uniqueCounts = append(uniqueCounts, line)
+		}
+	}
+
+	for _, n := range uniqueCounts {
+		fmt.Printf("%d\n", n)
 	}
 }
 
